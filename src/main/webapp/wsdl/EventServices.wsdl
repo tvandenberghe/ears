@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controller.ears2.eurofleets.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controller.ears2.eurofleets.eu" xmlns:intf="http://controller.ears2.eurofleets.eu" xmlns:tns1="http://message.domain.ears2.eurofleets.eu" xmlns:tns2="http://event.domain.ears2.eurofleets.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controller.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://event.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <element name="insertEvent">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="date" type="xsd:string"/>
+      <element name="actor" type="xsd:string"/>
+      <element name="subject" type="xsd:string"/>
+      <element name="actionName" type="xsd:string"/>
+      <element name="actionProperty" type="xsd:string"/>
+      <element name="categoryName" type="xsd:string"/>
+      <element name="tool" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertEventResponse">
+    <complexType>
+     <sequence>
+      <element name="insertEventReturn" type="tns1:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByIDXML">
+    <complexType>
+     <sequence>
+      <element name="eventId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByIDXMLResponse">
+    <complexType>
+     <sequence>
+      <element name="getEventByIDXMLReturn" type="tns2:Event"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByDate">
+    <complexType>
+     <sequence>
+      <element name="date" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByDateResponse">
+    <complexType>
+     <sequence>
+      <element name="getEventByDateReturn" type="tns2:Event"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByProgram">
+    <complexType>
+     <sequence>
+      <element name="program" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByProgramResponse">
+    <complexType>
+     <sequence>
+      <element name="getEventByProgramReturn" type="tns2:EventList"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getEventByRange">
+    <complexType>
+     <sequence>
+      <element name="startDate" type="xsd:string"/>
+      <element name="endDate" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEventByRangeResponse">
+    <complexType>
+     <sequence>
+      <element name="getEventByRangeReturn" type="tns2:EventList"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeEventByIDXML">
+    <complexType>
+     <sequence>
+      <element name="eventId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeEventByIDXMLResponse">
+    <complexType>
+     <sequence>
+      <element name="removeEventByIDXMLReturn" type="tns1:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeEventByRange">
+    <complexType>
+     <sequence>
+      <element name="startDate" type="xsd:string"/>
+      <element name="endDate" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeEventByRangeResponse">
+    <complexType>
+     <sequence>
+      <element name="removeEventByRangeReturn" type="tns1:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyEvent">
+    <complexType>
+     <sequence>
+      <element name="eventId" type="xsd:string"/>
+      <element name="timeStamp" type="xsd:string"/>
+      <element name="actor" type="xsd:string"/>
+      <element name="subject" type="xsd:string"/>
+      <element name="actionName" type="xsd:string"/>
+      <element name="actionProperty" type="xsd:string"/>
+      <element name="categoryName" type="xsd:string"/>
+      <element name="tool" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyEventResponse">
+    <complexType>
+     <sequence>
+      <element name="modifyEventReturn" type="tns1:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEvent">
+    <complexType/>
+   </element>
+   <element name="getEventResponse">
+    <complexType>
+     <sequence>
+      <element name="getEventReturn" type="tns2:EventList"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://message.domain.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://event.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="Message">
+    <sequence>
+     <element name="code" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://event.domain.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="Tool">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Event">
+    <sequence>
+     <element name="actionName" nillable="true" type="xsd:string"/>
+     <element name="actionProperty" nillable="true" type="xsd:string"/>
+     <element name="actor" nillable="true" type="xsd:string"/>
+     <element name="categoryName" nillable="true" type="xsd:string"/>
+     <element name="eventId" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="subject" nillable="true" type="xsd:string"/>
+     <element name="timeStamp" nillable="true" type="xsd:dateTime"/>
+     <element name="tool" nillable="true" type="tns2:Tool"/>
+    </sequence>
+   </complexType>
+   <complexType name="EventList">
+    <sequence>
+     <element name="cruises" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="events" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://event.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="modifyEventRequest">
+
+      <wsdl:part element="impl:modifyEvent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeEventByRangeResponse">
+
+      <wsdl:part element="impl:removeEventByRangeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertEventRequest">
+
+      <wsdl:part element="impl:insertEvent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByProgramRequest">
+
+      <wsdl:part element="impl:getEventByProgram" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertEventResponse">
+
+      <wsdl:part element="impl:insertEventResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeEventByIDXMLRequest">
+
+      <wsdl:part element="impl:removeEventByIDXML" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeEventByIDXMLResponse">
+
+      <wsdl:part element="impl:removeEventByIDXMLResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventResponse">
+
+      <wsdl:part element="impl:getEventResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByRangeRequest">
+
+      <wsdl:part element="impl:getEventByRange" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByRangeResponse">
+
+      <wsdl:part element="impl:getEventByRangeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByDateRequest">
+
+      <wsdl:part element="impl:getEventByDate" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeEventByRangeRequest">
+
+      <wsdl:part element="impl:removeEventByRange" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByDateResponse">
+
+      <wsdl:part element="impl:getEventByDateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByIDXMLResponse">
+
+      <wsdl:part element="impl:getEventByIDXMLResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByIDXMLRequest">
+
+      <wsdl:part element="impl:getEventByIDXML" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventRequest">
+
+      <wsdl:part element="impl:getEvent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyEventResponse">
+
+      <wsdl:part element="impl:modifyEventResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEventByProgramResponse">
+
+      <wsdl:part element="impl:getEventByProgramResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="EventPortType">
+
+      <wsdl:operation name="insertEvent">
+
+         <wsdl:input message="impl:insertEventRequest" name="insertEventRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertEventResponse" name="insertEventResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByIDXML">
+
+         <wsdl:input message="impl:getEventByIDXMLRequest" name="getEventByIDXMLRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEventByIDXMLResponse" name="getEventByIDXMLResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByDate">
+
+         <wsdl:input message="impl:getEventByDateRequest" name="getEventByDateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEventByDateResponse" name="getEventByDateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByProgram">
+
+         <wsdl:input message="impl:getEventByProgramRequest" name="getEventByProgramRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEventByProgramResponse" name="getEventByProgramResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByRange">
+
+         <wsdl:input message="impl:getEventByRangeRequest" name="getEventByRangeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEventByRangeResponse" name="getEventByRangeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeEventByIDXML">
+
+         <wsdl:input message="impl:removeEventByIDXMLRequest" name="removeEventByIDXMLRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeEventByIDXMLResponse" name="removeEventByIDXMLResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeEventByRange">
+
+         <wsdl:input message="impl:removeEventByRangeRequest" name="removeEventByRangeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeEventByRangeResponse" name="removeEventByRangeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyEvent">
+
+         <wsdl:input message="impl:modifyEventRequest" name="modifyEventRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifyEventResponse" name="modifyEventResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEvent">
+
+         <wsdl:input message="impl:getEventRequest" name="getEventRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEventResponse" name="getEventResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EventControllerSoapBinding" type="impl:EventPortType">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="insertEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertEventRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertEventResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByIDXML">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEventByIDXMLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEventByIDXMLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByDate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEventByDateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEventByDateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByProgram">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEventByProgramRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEventByProgramResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEventByRange">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEventByRangeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEventByRangeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeEventByIDXML">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeEventByIDXMLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeEventByIDXMLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeEventByRange">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeEventByRangeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeEventByRangeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifyEventRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifyEventResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEventRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEventResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="EventService">
+
+      <wsdl:port binding="impl:EventControllerSoapBinding" name="EventPort">
+
+         <wsdlsoap:address location="http://www.utm.csic.es/ears2/wsdl/EventServices"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

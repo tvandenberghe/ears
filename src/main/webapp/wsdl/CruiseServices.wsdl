@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controller.ears2.eurofleets.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controller.ears2.eurofleets.eu" xmlns:intf="http://controller.ears2.eurofleets.eu" xmlns:tns1="http://cruise.domain.ears2.eurofleets.eu" xmlns:tns2="http://message.domain.ears2.eurofleets.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controller.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://cruise.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <element name="getCruiseById">
+    <complexType>
+     <sequence>
+      <element name="cruiseId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCruiseByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getCruiseByIdReturn" type="tns1:Cruise"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getCruiseList">
+    <complexType>
+     <sequence>
+      <element name="platformCode" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCruiseListResponse">
+    <complexType>
+     <sequence>
+      <element name="getCruiseListReturn" type="tns1:CruiseList"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertCruise">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="cruiseName" type="xsd:string"/>
+      <element name="startDate" type="xsd:string"/>
+      <element name="endDate" type="xsd:string"/>
+      <element name="chiefScientist" type="xsd:string"/>
+      <element name="csorg" type="xsd:string"/>
+      <element name="platformCode" type="xsd:string"/>
+      <element name="platformClass" type="xsd:string"/>
+      <element name="objectives" type="xsd:string"/>
+      <element name="collateCenter" type="xsd:string"/>
+      <element name="startingHarbor" type="xsd:string"/>
+      <element name="arrivalHarbor" type="xsd:string"/>
+      <element name="seaAreas" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertCruiseResponse">
+    <complexType>
+     <sequence>
+      <element name="insertCruiseReturn" type="tns2:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyCruise">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="cruiseName" type="xsd:string"/>
+      <element name="startDate" type="xsd:string"/>
+      <element name="endDate" type="xsd:string"/>
+      <element name="chiefScientist" type="xsd:string"/>
+      <element name="csorg" type="xsd:string"/>
+      <element name="platformCode" type="xsd:string"/>
+      <element name="platformClass" type="xsd:string"/>
+      <element name="objectives" type="xsd:string"/>
+      <element name="collateCenter" type="xsd:string"/>
+      <element name="startingHarbor" type="xsd:string"/>
+      <element name="arrivalHarbor" type="xsd:string"/>
+      <element name="seaAreas" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyCruiseResponse">
+    <complexType>
+     <sequence>
+      <element name="modifyCruiseReturn" type="tns2:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeCruiseById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeCruiseByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="removeCruiseByIdReturn" type="tns2:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertCruiseByModifyingId">
+    <complexType>
+     <sequence>
+      <element name="newId" type="xsd:string"/>
+      <element name="originId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertCruiseByModifyingIdResponse">
+    <complexType>
+     <sequence>
+      <element name="insertCruiseByModifyingIdReturn" type="tns2:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeCruiseByDateRange">
+    <complexType>
+     <sequence>
+      <element name="startDate" type="xsd:string"/>
+      <element name="endDate" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeCruiseByDateRangeResponse">
+    <complexType>
+     <sequence>
+      <element name="removeCruiseByDateRangeReturn" type="tns2:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://cruise.domain.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="Cruise">
+    <sequence>
+     <element name="arrivalHarbor" nillable="true" type="xsd:string"/>
+     <element name="chiefScientist" nillable="true" type="xsd:string"/>
+     <element name="chiefScientistOrganisation" nillable="true" type="xsd:string"/>
+     <element name="collateCenter" nillable="true" type="xsd:string"/>
+     <element name="cruiseId" nillable="true" type="xsd:string"/>
+     <element name="cruiseName" nillable="true" type="xsd:string"/>
+     <element name="endDate" nillable="true" type="xsd:dateTime"/>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="objectives" nillable="true" type="xsd:string"/>
+     <element name="platformClass" nillable="true" type="xsd:string"/>
+     <element name="platformCode" nillable="true" type="xsd:string"/>
+     <element name="seaAreas" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="startDate" nillable="true" type="xsd:dateTime"/>
+     <element name="startingHarbor" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CruiseList">
+    <sequence>
+     <element name="cruises" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://cruise.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://message.domain.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://cruise.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="Message">
+    <sequence>
+     <element name="code" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="removeCruiseByDateRangeRequest">
+
+      <wsdl:part element="impl:removeCruiseByDateRange" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCruiseListResponse">
+
+      <wsdl:part element="impl:getCruiseListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCruiseByIdRequest">
+
+      <wsdl:part element="impl:getCruiseById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertCruiseByModifyingIdRequest">
+
+      <wsdl:part element="impl:insertCruiseByModifyingId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCruiseByIdResponse">
+
+      <wsdl:part element="impl:getCruiseByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertCruiseResponse">
+
+      <wsdl:part element="impl:insertCruiseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyCruiseResponse">
+
+      <wsdl:part element="impl:modifyCruiseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeCruiseByDateRangeResponse">
+
+      <wsdl:part element="impl:removeCruiseByDateRangeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertCruiseRequest">
+
+      <wsdl:part element="impl:insertCruise" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertCruiseByModifyingIdResponse">
+
+      <wsdl:part element="impl:insertCruiseByModifyingIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeCruiseByIdResponse">
+
+      <wsdl:part element="impl:removeCruiseByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeCruiseByIdRequest">
+
+      <wsdl:part element="impl:removeCruiseById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCruiseListRequest">
+
+      <wsdl:part element="impl:getCruiseList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyCruiseRequest">
+
+      <wsdl:part element="impl:modifyCruise" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CruisePortType">
+
+      <wsdl:operation name="getCruiseById">
+
+         <wsdl:input message="impl:getCruiseByIdRequest" name="getCruiseByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCruiseByIdResponse" name="getCruiseByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCruiseList">
+
+         <wsdl:input message="impl:getCruiseListRequest" name="getCruiseListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCruiseListResponse" name="getCruiseListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertCruise">
+
+         <wsdl:input message="impl:insertCruiseRequest" name="insertCruiseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertCruiseResponse" name="insertCruiseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyCruise">
+
+         <wsdl:input message="impl:modifyCruiseRequest" name="modifyCruiseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifyCruiseResponse" name="modifyCruiseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeCruiseById">
+
+         <wsdl:input message="impl:removeCruiseByIdRequest" name="removeCruiseByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeCruiseByIdResponse" name="removeCruiseByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertCruiseByModifyingId">
+
+         <wsdl:input message="impl:insertCruiseByModifyingIdRequest" name="insertCruiseByModifyingIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertCruiseByModifyingIdResponse" name="insertCruiseByModifyingIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeCruiseByDateRange">
+
+         <wsdl:input message="impl:removeCruiseByDateRangeRequest" name="removeCruiseByDateRangeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeCruiseByDateRangeResponse" name="removeCruiseByDateRangeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CruiseControllerSoapBinding" type="impl:CruisePortType">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getCruiseById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCruiseByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCruiseByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCruiseList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCruiseListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCruiseListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertCruise">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertCruiseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertCruiseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyCruise">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifyCruiseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifyCruiseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeCruiseById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeCruiseByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeCruiseByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertCruiseByModifyingId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertCruiseByModifyingIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertCruiseByModifyingIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeCruiseByDateRange">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeCruiseByDateRangeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeCruiseByDateRangeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CruiseControllerService">
+
+      <wsdl:port binding="impl:CruiseControllerSoapBinding" name="CruisePort">
+
+         <wsdlsoap:address location="http://www.utm.csic.es/ears2/wdsl/CruiseServices"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

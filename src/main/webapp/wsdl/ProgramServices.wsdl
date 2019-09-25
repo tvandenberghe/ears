@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controller.ears2.eurofleets.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controller.ears2.eurofleets.eu" xmlns:intf="http://controller.ears2.eurofleets.eu" xmlns:tns1="http://program.domain.ears2.eurofleets.eu" xmlns:tns2="http://message.domain.ears2.eurofleets.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controller.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://program.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <element name="getProgramList">
+    <complexType>
+     <sequence>
+      <element name="cruiseId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getProgramListResponse">
+    <complexType>
+     <sequence>
+      <element name="getProgramListReturn" type="tns1:ProgramList"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getProgramById">
+    <complexType>
+     <sequence>
+      <element name="programId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getProgramByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getProgramByIdReturn" type="tns1:Program"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertProgram">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="cruiseId" type="xsd:string"/>
+      <element name="originatorCode" type="xsd:string"/>
+      <element name="PIName" type="xsd:string"/>
+      <element name="description" type="xsd:string"/>
+      <element name="projects" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertProgramResponse">
+    <complexType>
+     <sequence>
+      <element name="insertProgramReturn" type="tns2:Message"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://program.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://program.domain.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://message.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="ProgramList">
+    <sequence>
+     <element name="programs" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="Program">
+    <sequence>
+     <element name="PIName" nillable="true" type="xsd:string"/>
+     <element name="cruiseId" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="originatorCode" nillable="true" type="xsd:string"/>
+     <element name="originatorcode" nillable="true" type="xsd:string"/>
+     <element name="programId" nillable="true" type="xsd:string"/>
+     <element name="projects" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://message.domain.ears2.eurofleets.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://program.domain.ears2.eurofleets.eu"/>
+   <import namespace="http://controller.ears2.eurofleets.eu"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="Message">
+    <sequence>
+     <element name="code" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getProgramListResponse">
+
+      <wsdl:part element="impl:getProgramListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertProgramRequest">
+
+      <wsdl:part element="impl:insertProgram" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProgramByIdRequest">
+
+      <wsdl:part element="impl:getProgramById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProgramByIdResponse">
+
+      <wsdl:part element="impl:getProgramByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProgramListRequest">
+
+      <wsdl:part element="impl:getProgramList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertProgramResponse">
+
+      <wsdl:part element="impl:insertProgramResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ProgramController">
+
+      <wsdl:operation name="getProgramList">
+
+         <wsdl:input message="impl:getProgramListRequest" name="getProgramListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProgramListResponse" name="getProgramListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProgramById">
+
+         <wsdl:input message="impl:getProgramByIdRequest" name="getProgramByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProgramByIdResponse" name="getProgramByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertProgram">
+
+         <wsdl:input message="impl:insertProgramRequest" name="insertProgramRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertProgramResponse" name="insertProgramResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ProgramControllerSoapBinding" type="impl:ProgramController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getProgramList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProgramListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProgramListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProgramById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProgramByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProgramByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertProgram">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertProgramRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertProgramResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ProgramControllerService">
+
+      <wsdl:port binding="impl:ProgramControllerSoapBinding" name="ProgramController">
+
+         <wsdlsoap:address location="http://www.utm.csic.es/ears2/wsdl/ProgramController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

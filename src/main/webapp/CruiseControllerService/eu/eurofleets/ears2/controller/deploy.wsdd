@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CruiseControllerService WSDL service -->
+
+  <service name="CruiseController" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://controller.ears2.eurofleets.eu"/>
+      <parameter name="wsdlServiceElement" value="CruiseControllerService"/>
+      <parameter name="schemaQualified" value="http://xml.apache.org/xml-soap,http://controller.ears2.eurofleets.eu,http://cruise.domain.ears2.eurofleets.eu,http://message.domain.ears2.eurofleets.eu"/>
+      <parameter name="wsdlServicePort" value="CruiseController"/>
+      <parameter name="className" value="eu.eurofleets.ears2.controller.CruiseController"/>
+      <parameter name="wsdlPortType" value="CruiseController"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://cruise.domain.ears2.eurofleets.eu" name="getCruiseById" qname="operNS:getCruiseById" returnQName="retNS:getCruiseByIdReturn" returnType="rtns:Cruise" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cruiseId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://cruise.domain.ears2.eurofleets.eu" name="getCruiseList" qname="operNS:getCruiseList" returnQName="retNS:getCruiseListReturn" returnType="rtns:CruiseList" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:platformCode" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="insertCruise" qname="operNS:insertCruise" returnQName="retNS:insertCruiseReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cruiseName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:endDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:chiefScientist" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:csorg" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:platformCode" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:platformClass" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:objectives" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:collateCenter" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startingHarbor" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:arrivalHarbor" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:seaAreas" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="modifyCruise" qname="operNS:modifyCruise" returnQName="retNS:modifyCruiseReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cruiseName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:endDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:chiefScientist" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:csorg" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:platformCode" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:platformClass" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:objectives" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:collateCenter" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startingHarbor" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:arrivalHarbor" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:seaAreas" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="removeCruiseById" qname="operNS:removeCruiseById" returnQName="retNS:removeCruiseByIdReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="insertCruiseByModifyingId" qname="operNS:insertCruiseByModifyingId" returnQName="retNS:insertCruiseByModifyingIdReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:newId" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:originId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="removeCruiseByDateRange" qname="operNS:removeCruiseByDateRange" returnQName="retNS:removeCruiseByDateRangeReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:endDate" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="removeCruiseById insertCruiseByModifyingId insertCruise getCruiseById getCruiseList modifyCruise removeCruiseByDateRange"/>
+
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeCruiseByIdResponse" type="java:eu.eurofleets.ears2.controller.RemoveCruiseByIdResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;modifyCruiseResponse" type="java:eu.eurofleets.ears2.controller.ModifyCruiseResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://controller.ears2.eurofleets.eu" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getCruiseByIdResponse" type="java:eu.eurofleets.ears2.controller.GetCruiseByIdResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getCruiseListResponse" type="java:eu.eurofleets.ears2.controller.GetCruiseListResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeCruiseByDateRange" type="java:eu.eurofleets.ears2.controller.RemoveCruiseByDateRange" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertCruiseResponse" type="java:eu.eurofleets.ears2.controller.InsertCruiseResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertCruiseByModifyingIdResponse" type="java:eu.eurofleets.ears2.controller.InsertCruiseByModifyingIdResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertCruise" type="java:eu.eurofleets.ears2.controller.InsertCruise" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeCruiseByDateRangeResponse" type="java:eu.eurofleets.ears2.controller.RemoveCruiseByDateRangeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeCruiseById" type="java:eu.eurofleets.ears2.controller.RemoveCruiseById" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getCruiseList" type="java:eu.eurofleets.ears2.controller.GetCruiseList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://cruise.domain.ears2.eurofleets.eu" qname="ns:Cruise" type="java:eu.eurofleets.ears2.domain.cruise.Cruise" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getCruiseById" type="java:eu.eurofleets.ears2.controller.GetCruiseById" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://cruise.domain.ears2.eurofleets.eu" qname="ns:CruiseList" type="java:eu.eurofleets.ears2.domain.cruise.CruiseList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://message.domain.ears2.eurofleets.eu" qname="ns:Message" type="java:eu.eurofleets.ears2.domain.message.Message" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertCruiseByModifyingId" type="java:eu.eurofleets.ears2.controller.InsertCruiseByModifyingId" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;modifyCruise" type="java:eu.eurofleets.ears2.controller.ModifyCruise" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

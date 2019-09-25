@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EventControllerService WSDL service -->
+
+  <service name="EventController" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://controller.ears2.eurofleets.eu"/>
+      <parameter name="wsdlServiceElement" value="EventControllerService"/>
+      <parameter name="schemaQualified" value="http://xml.apache.org/xml-soap,http://controller.ears2.eurofleets.eu,http://event.domain.ears2.eurofleets.eu,http://message.domain.ears2.eurofleets.eu"/>
+      <parameter name="wsdlServicePort" value="EventController"/>
+      <parameter name="className" value="eu.eurofleets.ears2.controller.EventController"/>
+      <parameter name="wsdlPortType" value="EventController"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="insertEvent" qname="operNS:insertEvent" returnQName="retNS:insertEventReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:date" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:actor" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:subject" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:actionName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:actionProperty" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:categoryName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tool" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://event.domain.ears2.eurofleets.eu" name="getEventByIDXML" qname="operNS:getEventByIDXML" returnQName="retNS:getEventByIDXMLReturn" returnType="rtns:Event" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:eventId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://event.domain.ears2.eurofleets.eu" name="getEventByDate" qname="operNS:getEventByDate" returnQName="retNS:getEventByDateReturn" returnType="rtns:Event" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:date" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://event.domain.ears2.eurofleets.eu" name="getEventByProgram" qname="operNS:getEventByProgram" returnQName="retNS:getEventByProgramReturn" returnType="rtns:EventList" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:program" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://event.domain.ears2.eurofleets.eu" name="getEventByRange" qname="operNS:getEventByRange" returnQName="retNS:getEventByRangeReturn" returnType="rtns:EventList" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:endDate" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="removeEventByIDXML" qname="operNS:removeEventByIDXML" returnQName="retNS:removeEventByIDXMLReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:eventId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="removeEventByRange" qname="operNS:removeEventByRange" returnQName="retNS:removeEventByRangeReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startDate" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:endDate" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="modifyEvent" qname="operNS:modifyEvent" returnQName="retNS:modifyEventReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:eventId" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:timeStamp" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:actor" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:subject" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:actionName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:actionProperty" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:categoryName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tool" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://event.domain.ears2.eurofleets.eu" name="getEvent" qname="operNS:getEvent" returnQName="retNS:getEventReturn" returnType="rtns:EventList" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="getEventByRange getEventByProgram modifyEvent getEventByIDXML getEventByDate insertEvent removeEventByRange getEvent removeEventByIDXML"/>
+
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertEvent" type="java:eu.eurofleets.ears2.controller.InsertEvent" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://controller.ears2.eurofleets.eu" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEvent" type="java:eu.eurofleets.ears2.controller.GetEvent" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByIDXML" type="java:eu.eurofleets.ears2.controller.GetEventByIDXML" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByDate" type="java:eu.eurofleets.ears2.controller.GetEventByDate" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;modifyEventResponse" type="java:eu.eurofleets.ears2.controller.ModifyEventResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeEventByRangeResponse" type="java:eu.eurofleets.ears2.controller.RemoveEventByRangeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://event.domain.ears2.eurofleets.eu" qname="ns:Tool" type="java:eu.eurofleets.ears2.domain.event.Tool" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByRange" type="java:eu.eurofleets.ears2.controller.GetEventByRange" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByRangeResponse" type="java:eu.eurofleets.ears2.controller.GetEventByRangeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertEventResponse" type="java:eu.eurofleets.ears2.controller.InsertEventResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByDateResponse" type="java:eu.eurofleets.ears2.controller.GetEventByDateResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByIDXMLResponse" type="java:eu.eurofleets.ears2.controller.GetEventByIDXMLResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByProgram" type="java:eu.eurofleets.ears2.controller.GetEventByProgram" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;modifyEvent" type="java:eu.eurofleets.ears2.controller.ModifyEvent" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventResponse" type="java:eu.eurofleets.ears2.controller.GetEventResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://event.domain.ears2.eurofleets.eu" qname="ns:EventList" type="java:eu.eurofleets.ears2.domain.event.EventList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getEventByProgramResponse" type="java:eu.eurofleets.ears2.controller.GetEventByProgramResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeEventByIDXML" type="java:eu.eurofleets.ears2.controller.RemoveEventByIDXML" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeEventByIDXMLResponse" type="java:eu.eurofleets.ears2.controller.RemoveEventByIDXMLResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;removeEventByRange" type="java:eu.eurofleets.ears2.controller.RemoveEventByRange" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://event.domain.ears2.eurofleets.eu" qname="ns:Event" type="java:eu.eurofleets.ears2.domain.event.Event" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://message.domain.ears2.eurofleets.eu" qname="ns:Message" type="java:eu.eurofleets.ears2.domain.message.Message" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

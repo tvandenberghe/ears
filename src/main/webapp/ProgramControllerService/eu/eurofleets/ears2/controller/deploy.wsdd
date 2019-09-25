@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ProgramControllerService WSDL service -->
+
+  <service name="ProgramController" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://controller.ears2.eurofleets.eu"/>
+      <parameter name="wsdlServiceElement" value="ProgramControllerService"/>
+      <parameter name="schemaQualified" value="http://xml.apache.org/xml-soap,http://controller.ears2.eurofleets.eu,http://program.domain.ears2.eurofleets.eu,http://message.domain.ears2.eurofleets.eu"/>
+      <parameter name="wsdlServicePort" value="ProgramController"/>
+      <parameter name="className" value="eu.eurofleets.ears2.controller.ProgramController"/>
+      <parameter name="wsdlPortType" value="ProgramController"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://program.domain.ears2.eurofleets.eu" name="getProgramList" qname="operNS:getProgramList" returnQName="retNS:getProgramListReturn" returnType="rtns:ProgramList" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cruiseId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://program.domain.ears2.eurofleets.eu" name="getProgramById" qname="operNS:getProgramById" returnQName="retNS:getProgramByIdReturn" returnType="rtns:Program" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:programId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.ears2.eurofleets.eu" xmlns:retNS="http://controller.ears2.eurofleets.eu" xmlns:rtns="http://message.domain.ears2.eurofleets.eu" name="insertProgram" qname="operNS:insertProgram" returnQName="retNS:insertProgramReturn" returnType="rtns:Message" soapAction="">
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cruiseId" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:originatorCode" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PIName" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:description" type="tns:string"/>
+        <parameter xmlns:pns="http://controller.ears2.eurofleets.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:projects" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="insertProgram getProgramById getProgramList"/>
+
+      <arrayMapping xmlns:ns="http://controller.ears2.eurofleets.eu" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getProgramList" type="java:eu.eurofleets.ears2.controller.GetProgramList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://program.domain.ears2.eurofleets.eu" qname="ns:ProgramList" type="java:eu.eurofleets.ears2.domain.program.ProgramList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getProgramById" type="java:eu.eurofleets.ears2.controller.GetProgramById" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertProgramResponse" type="java:eu.eurofleets.ears2.controller.InsertProgramResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://program.domain.ears2.eurofleets.eu" qname="ns:Program" type="java:eu.eurofleets.ears2.domain.program.Program" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getProgramByIdResponse" type="java:eu.eurofleets.ears2.controller.GetProgramByIdResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;getProgramListResponse" type="java:eu.eurofleets.ears2.controller.GetProgramListResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.ears2.eurofleets.eu" qname="ns:&gt;insertProgram" type="java:eu.eurofleets.ears2.controller.InsertProgram" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://message.domain.ears2.eurofleets.eu" qname="ns:Message" type="java:eu.eurofleets.ears2.domain.message.Message" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
