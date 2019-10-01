@@ -15,7 +15,8 @@ In Tomcat installation directory \webapps\manager\WEB-INF\web.xml   file
 
 Modified content  like 
 
-`    <multipart-config>
+```
+   <multipart-config>
 
 ​      <!-- 50MB max -->
 
@@ -26,6 +27,7 @@ Modified content  like
 ​      <file-size-threshold>0</file-size-threshold>
 
 ​    </multipart-config>
+```
 
  
 
@@ -49,7 +51,7 @@ Replace by
 
 ​              
 
-​    </multipart-config>`
+​    </multipart-config>
 
 
 
