@@ -31,6 +31,7 @@ Modified content  like
 
  
 
+```
 Replace by
 
 ​    <multipart-config>
@@ -52,68 +53,11 @@ Replace by
 ​              
 
 ​    </multipart-config>
-
-
-
-    <multipart-config>
-      <!-- 50MB max -->
-      <max-file-size>52428800</max-file-size>
-      <max-request-size>52428800</max-request-size>
-      <file-size-threshold>0</file-size-threshold>
-    </multipart-config>
-
-Replace by
-    <multipart-config>
-      <!-- 50MB max 
-      <max-file-size>52428800</max-file-size>
-      <max-request-size>52428800</max-request-size>
-      <file-size-threshold>0</file-size-threshold>-->
-	  <max-file-size>92428800</max-file-size>
-      <max-request-size>92428800</max-request-size>
-      <file-size-threshold>0</file-size-threshold>
-	  
-
-    </multipart-config>
+```
 
 
 
 
-
-​    <multipart-config>
-
-​      <!-- 50MB max -->
-
-​      <max-file-size>52428800</max-file-size>
-
-​      <max-request-size>52428800</max-request-size>
-
-​      <file-size-threshold>0</file-size-threshold>
-
-​    </multipart-config>
-
- 
-
-Replace by
-
-​    <multipart-config>
-
-​      <!-- 50MB max 
-
-​      <max-file-size>52428800</max-file-size>
-
-​      <max-request-size>52428800</max-request-size>
-
-​      <file-size-threshold>0</file-size-threshold>-->
-
-​              <max-file-size>92428800</max-file-size>
-
-​      <max-request-size>92428800</max-request-size>
-
-​      <file-size-threshold>0</file-size-threshold>
-
-​              
-
-​    </multipart-config>
 
 
 
