@@ -1,0 +1,1875 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies.ef-ears.eu/ears2/1#"
+     xml:base="http://ontologies.ef-ears.eu/ears2/1"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:ears2="http://ontologies.ef-ears.eu/ears2/1#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://ontologies.ef-ears.eu/ears2/1#">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bmdc-test</rdfs:label>
+        <owl:versionIRI rdf:resource="http://ontologies.ef-ears.eu/ears2/1/PROGRAM/20180118#"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <scope rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PROGRAM</scope>
+        <scopedTo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bmdc-test</scopedTo>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:50.263Z</dc:modified>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/created"/>
+    
+
+
+    <!-- creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
+    
+
+
+    <!-- publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- projectCoordinator -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/projectCoordinator"/>
+    
+
+
+    <!-- actionPartOfEvent -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#actionPartOfEvent">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#hasAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- asConcept -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#asConcept">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#defines"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- canAffectProcess -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#canAffectProcess">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Incident"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- canBeAttachedOn -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#canBeAttachedOn">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#canHost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- canHost -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#canHost">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- contains -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#contains">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#isMemberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- defines -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#defines"/>
+    
+
+
+    <!-- hasAction -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#hasAction">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- hasAsSubject -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#hasAsSubject">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- hasProcess -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#hasProcess">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#processPartOfEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#hasProperty">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#isPropertyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- involvedInEvent -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#involvedInEvent">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#withTool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- involvedInProcess -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#involvedInProcess">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#involvesStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- involvesStep -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#involvesStep"/>
+    
+
+
+    <!-- isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isMemberOf">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- isPropertyOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isPropertyOf"/>
+    
+
+
+    <!-- isSynonymOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isSynonymOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- isTriggeredByHostEvent -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isTriggeredByHostEvent">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#triggersHostedEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- limitedToParameters -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#limitedToParameters">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#propertyParametersCollection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- limitedToSubjects -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#limitedToSubjects">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#propertySubjectsCollection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- precededBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#precededBy">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#supersededBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- processPartOfEvent -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#processPartOfEvent"/>
+    
+
+
+    <!-- realizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#realizedBy">
+        <owl:inverseOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#realizes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- realizes -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#realizes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#GenericEventDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- supersededBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#supersededBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <owl:equivalentProperty rdf:resource="http://purl.org/dc/elements/1.1/isReplacedBy"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- triggersHostedEvent -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#triggersHostedEvent">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- withTool -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#withTool">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- isReplacedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/isReplacedBy"/>
+    
+
+
+    <!-- parentCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentCountry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Harbour"/>
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Organisation"/>
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasAddress">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- hasEmail -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasEmail">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Organisation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- controller -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#controller">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- dimension -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#dimension">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- formatPattern -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#formatPattern">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- hasSerialNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#hasSerialNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- isComposite -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isComposite">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- isDataProvider -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isDataProvider">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- isMeta -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isMeta">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- isSensor -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#isSensor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- kind -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#kind">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- mandatory -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#mandatory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- multiple -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#multiple">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- requiresComment -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#requiresComment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- scopedTo -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#scopedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- status -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#status">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- submitter -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#submitter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- unit -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.ef-ears.eu/ears2/1#unit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- deprecated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#deprecated"/>
+    
+
+
+    <!-- lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Harbour"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- lon -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lon">
+        <rdfs:domain rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Harbour"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- editorialNote -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+    
+
+
+    <!-- country-name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#country-name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Harbour"/>
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Organisation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- locality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#locality"/>
+    
+
+
+    <!-- postal-code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#postal-code"/>
+    
+
+
+    <!-- region -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#region"/>
+    
+
+
+    <!-- street-address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#street-address"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Organisation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Organisation"/>
+    
+
+
+    <!-- ResearchProject -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/ResearchProject"/>
+    
+
+
+    <!-- Action -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Action">
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+        <rdfs:label xml:lang="fr">Action</rdfs:label>
+        <rdfs:comment xml:lang="en">An Action defines a step in an ongoing process, and can be deliberate or incidentally</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+    </owl:Class>
+    
+
+
+    <!-- Country -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Country">
+        <rdfs:label xml:lang="en">Country</rdfs:label>
+        <rdfs:label xml:lang="fr">Pays</rdfs:label>
+        <rdfs:comment xml:lang="en">An country. Based on SDN:C32</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- DeprecatedIndividual -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#DeprecatedIndividual">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#status"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deprecated</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#deprecated"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Class>
+    
+
+
+    <!-- EarsTerm -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#EarsTerm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#asConcept"/>
+                        <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Event definition -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventDefinition">
+        <rdfs:label xml:lang="fr">Definition d&apos;événement</rdfs:label>
+        <rdfs:label xml:lang="en">Event definition</rdfs:label>
+        <rdfs:comment xml:lang="en">An Event defines a practical type of event by associating a tool, process, action and possibly an accompanying property.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#hasAction"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#hasProcess"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#withTool"/>
+                        <owl:onClass>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+                                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:onClass>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Event property -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventProperty">
+        <rdfs:label xml:lang="en">Event property</rdfs:label>
+        <rdfs:label xml:lang="fr">Propriété d&apos;événement</rdfs:label>
+        <rdfs:comment xml:lang="en">An Event property is needed when ...</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+    </owl:Class>
+    
+
+
+    <!-- Generic event definition -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#GenericEventDefinition">
+        <rdfs:label xml:lang="fr">Définition générale d&apos;evénements</rdfs:label>
+        <rdfs:label xml:lang="en">Generic event definition</rdfs:label>
+        <rdfs:comment xml:lang="en">A Generic Event Definition defines a generic event type that is associated with tool categories.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#withTool"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+        <owl:disjointWith rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- Harbour -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Harbour">
+        <rdfs:label xml:lang="en">Harbour</rdfs:label>
+        <rdfs:label xml:lang="fr">Port</rdfs:label>
+        <rdfs:comment xml:lang="en">A harbour is a place ships can arrive and depart from. Based on SDN:C38</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- Incident -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Incident">
+        <rdfs:label xml:lang="en">Incident</rdfs:label>
+        <rdfs:label xml:lang="fr">Incident</rdfs:label>
+        <rdfs:comment xml:lang="en">A Incident is an unexpected event during the course of a process</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#canAffectProcess"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+    </owl:Class>
+    
+
+
+    <!-- MandatoryEventProperty -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#MandatoryEventProperty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#mandatory"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- MonoEventProperty -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#MonoEventProperty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#multiple"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- MultiEventProperty -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#MultiEventProperty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#multiple"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- OptionalEventProperty -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#OptionalEventProperty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#mandatory"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- Organisation -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Organisation">
+        <rdfs:label xml:lang="en">Organisation</rdfs:label>
+        <rdfs:label xml:lang="fr">Organisation</rdfs:label>
+        <rdfs:comment xml:lang="en">An organisation is an organisation involved in marine science. Based on SDN:EDMO.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- Process -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Process">
+        <rdfs:label xml:lang="en">Process</rdfs:label>
+        <rdfs:label xml:lang="fr">Processus</rdfs:label>
+        <rdfs:comment xml:lang="en">A Process defines a general ongoing activity a tool or vessel can do and consists of a sequence of punctuated actions (including malfunctions and deliberate actions).</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#hasAsSubject"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Subject"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#involvesStep"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Etape de processus -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#ProcessStep">
+        <rdfs:label xml:lang="fr">Etape de processus</rdfs:label>
+        <rdfs:label xml:lang="en">Process Step</rdfs:label>
+        <rdfs:comment xml:lang="en">A Process Step defines an expected event, a particular step, that can occur during the course of a process.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#involvedInProcess"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Projet -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Project">
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+        <rdfs:label xml:lang="fr">Projet</rdfs:label>
+        <rdfs:comment xml:lang="en">A project is a marine scientific research project. Based on SDN:EDMERP.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ResearchProject"/>
+    </owl:Class>
+    
+
+
+    <!-- Sea Area -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#SeaArea">
+        <rdfs:label xml:lang="fr">Partie du mer</rdfs:label>
+        <rdfs:label xml:lang="en">Sea Area</rdfs:label>
+        <rdfs:comment xml:lang="en">A sea area is a part of the sea. Based on SDN:C16</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- Specific event definition -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition">
+        <rdfs:label xml:lang="fr">Définition spécifique d&apos;evénements</rdfs:label>
+        <rdfs:label xml:lang="en">Specific event definition</rdfs:label>
+        <rdfs:comment xml:lang="en">A Specific Event Definition defines an general event type that is associated with a specific tool.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies.ef-ears.eu/ears2/1#GenericEventDefinition"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#withTool"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- Subject -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Subject">
+        <rdfs:label xml:lang="en">Subject</rdfs:label>
+        <rdfs:label xml:lang="fr">Sujet</rdfs:label>
+        <rdfs:comment xml:lang="en">A Subject is a grouping of processes</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+    </owl:Class>
+    
+
+
+    <!-- Instrument -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Tool">
+        <rdfs:label xml:lang="fr">Instrument</rdfs:label>
+        <rdfs:label xml:lang="en">Tool</rdfs:label>
+        <rdfs:comment xml:lang="en">Defines the specific device or instrument performing the event (sampling gear, sensor, ..). Tools are grouped by the Tool Category they are linked to. A tool can also be composed of different tools itself. The SeaVoX Device Catalogue (L22) provides a good start list.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#isMemberOf"/>
+                        <owl:onClass rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#hasSerialNumber"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Catégorie d&apos;instruments -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#ToolCategory">
+        <rdfs:label xml:lang="en">Category of tools</rdfs:label>
+        <rdfs:label xml:lang="fr">Catégorie d&apos;instruments</rdfs:label>
+        <rdfs:comment xml:lang="en">Groups of sensors, instruments or sampling devices. The SeaDataNet device categories (L05) provides a good reference list. (previously referred to as &apos;Subject&apos; within Eurofleets)</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#EarsTerm"/>
+    </owl:Class>
+    
+
+
+    <!-- Vessel -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#Vessel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies.ef-ears.eu/ears2/1#isMemberOf"/>
+                        <owl:hasValue rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ctg_26"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- propertyParametersCollection -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#propertyParametersCollection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- propertySubjectsCollection -->
+
+    <owl:Class rdf:about="http://ontologies.ef-ears.eu/ears2/1#propertySubjectsCollection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- Resource -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
+
+
+    <!-- NamedIndividual -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    
+
+
+    <!-- Ontology -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Ontology"/>
+    
+
+
+    <!-- Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+    
+
+
+    <!-- Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- Scheme -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- act_1 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_1">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_800"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_11 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_11">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_820"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_14 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_14">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_825"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_15 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_15">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_826"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_16 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_16">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_827"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_2">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_801"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_3 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_3">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_802"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_4 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_4">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_803"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- act_8 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#act_8">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ProcessStep"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_813"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_794 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_794">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:03:07.283Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:pro::a631ae50-df23-11e3-89ba-d850e6ba987a</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:03:07.283Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Capturing data on a storage medium.</skos:definition>
+        <skos:prefLabel xml:lang="en">Recording</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_800 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_800">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:30.332Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::d5dc97a0-df23-11e3-89ba-d850e6ba987a</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:30.332Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">Begin</skos:altLabel>
+        <skos:definition xml:lang="en">Starting a process.</skos:definition>
+        <skos:prefLabel xml:lang="en">Start</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_801 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_801">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:37.221Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::d8e39610-df23-11e3-89ba-d850e6ba987a</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:37.221Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">Finish</skos:altLabel>
+        <skos:definition xml:lang="en">Ending a process.</skos:definition>
+        <skos:prefLabel xml:lang="en">End</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_802 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_802">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:44.585Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::dd97f660-df23-11e3-89ba-d850e6ba987a</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:44.585Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Period during which a process is suspended before it is continued.</skos:definition>
+        <skos:prefLabel xml:lang="en">Pause</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_803 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_803">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:50.127Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::e1178030-df23-11e3-89ba-d850e6ba987a</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T07:04:50.127Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">The restart of recording after a pause.</skos:definition>
+        <skos:prefLabel xml:lang="en">Resume</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_809 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_809">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T09:53:18.903Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:pro::4bc8ae20-df44-11e3-9d89-525400d08514</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T09:53:18.903Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Measurements along a vertical profile.</skos:definition>
+        <skos:prefLabel xml:lang="en">Profile</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_813 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_813">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T11:28:56.565Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::da73d330-df48-11e3-9d89-525400d08514</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T11:28:56.565Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">The instrument or group of instrument reached the maximum depth.</skos:definition>
+        <skos:prefLabel xml:lang="en">AtMaxDepth</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_820 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_820">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T13:40:46.187Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::377a0b50-df5b-11e3-b060-525400d08514</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-19T13:40:46.187Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Failure during the operation of a given measurement or sampling device due to malfunction or conditions.</skos:definition>
+        <skos:prefLabel xml:lang="en">Failed</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_825 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_825">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-20T10:16:24.365Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::180b5020-e010-11e3-a4d3-525400d08514</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-20T10:16:24.365Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Start of descent of measurements along a vertical profile.</skos:definition>
+        <skos:prefLabel xml:lang="en">Descend</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_826 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_826">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-20T11:15:53.586Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::2c00b7f0-e010-11e3-a4d3-525400d08514</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-20T11:15:53.586Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Start of rise of measurements along a vertical profile.</skos:definition>
+        <skos:prefLabel xml:lang="en">Ascend</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_827 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#concept_827">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-20T11:16:40.705Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adminUI</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:act::62763760-e010-11e3-a4d3-525400d08514</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-20T11:16:40.705Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Placement of instrument in the water at sea surface.</skos:definition>
+        <skos:prefLabel xml:lang="en">InWater</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- ctg_26 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#ctg_26"/>
+    
+
+
+    <!-- ctg_27 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#ctg_27">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+        <asConcept rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/183/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- dev_127 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#dev_127">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <asConcept rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/NETT0028/"/>
+        <isMemberOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ctg_27"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- dev_15 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#dev_15">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+        <asConcept rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/NETT0007/"/>
+        <isMemberOf rdf:resource="http://ontologies.ef-ears.eu/ears2/1#ctg_27"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- earsScheme -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#earsScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- pro_13 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#pro_13">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_809"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_11"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_14"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_15"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_16"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_2"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_3"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_4"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- pro_2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1#pro_2">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1#concept_794"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_1"/>
+        <involvesStep rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c7b789-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c7b789-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.511Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c7b789-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Pause</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Pause</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Pause</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c80594-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c80594-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.513Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c80594-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Recording End</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Recording End</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Recording End</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c82cad-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c82cad-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.514Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c82cad-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Descend</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Descend</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Descend</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c853c4-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c853c4-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.515Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c853c4-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Resume</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Resume</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Resume</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c87adc-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c87adc-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.516Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c87adc-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Recording Start</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Recording Start</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Recording Start</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c8a1f2-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c8a1f2-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.517Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c8a1f2-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile End</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile End</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile End</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c8eff3-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c8eff3-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.519Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c8eff3-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile AtMaxDepth</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile AtMaxDepth</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile AtMaxDepth</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c9170c-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c9170c-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.520Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c9170c-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Failed</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Failed</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Failed</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c96521-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c96521-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.522Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c96521-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Ascend</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Ascend</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile Ascend</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- concept_71c98c4d-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c98c4d-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaitForApproval</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T11:12:17.523Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:C17::11BE</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ears:sev::71c98c4d-fc40-11e7-8da9-c85b76f6d56e</dc:identifier>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurofleets Governance Team</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile InWater</skos:altLabel>
+        <skos:definition xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile InWater</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002): Profile InWater</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c7b789-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c7b789-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c7b789-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_3"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c80594-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c80594-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c80594-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_2"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_2"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c82cad-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c82cad-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c82cad-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_14"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c853c4-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c853c4-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c853c4-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_4"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c87adc-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c87adc-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c87adc-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_1"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_2"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c8a1f2-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c8a1f2-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c8a1f2-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_2"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c8eff3-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c8eff3-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c8eff3-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_8"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c9170c-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c9170c-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c9170c-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_11"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c96521-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c96521-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c96521-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_15"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- sev_71c98c4d-fc40-11e7-8da9-c85b76f6d56e -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.ef-ears.eu/ears2/1/11BE#sev_71c98c4d-fc40-11e7-8da9-c85b76f6d56e">
+        <rdf:type rdf:resource="http://ontologies.ef-ears.eu/ears2/1#SpecificEventDefinition"/>
+        <asConcept rdf:resource="http://ontologies.ef-ears.eu/ears2/1/11BE#concept_71c98c4d-fc40-11e7-8da9-c85b76f6d56e"/>
+        <hasAction rdf:resource="http://ontologies.ef-ears.eu/ears2/1#act_16"/>
+        <hasProcess rdf:resource="http://ontologies.ef-ears.eu/ears2/1#pro_13"/>
+        <isDataProvider rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDataProvider>
+        <withTool rdf:resource="http://ontologies.ef-ears.eu/ears2/1#dev_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &lt;http://vocab.nerc.ac.uk/collection/L05/current/183/&gt; -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/183/">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-20T09:34:40Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaVox (BODC/SDN)</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:L05::183</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-20T09:34:40Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaVox (BODC/SDN)</dc:publisher>
+        <skos:altLabel xml:lang="en"></skos:altLabel>
+        <skos:definition xml:lang="en">Instrument that measures the amount of sound energy transmitted into the water column returned to the instrument.</skos:definition>
+        <skos:prefLabel xml:lang="en">acoustic backscatter sensors</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &lt;http://vocab.nerc.ac.uk/collection/L22/current/NETT0007/&gt; -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L22/current/NETT0007/">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-10-21T13:18:49Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaVox (BODC/SDN)</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:L22::NETT0007</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-10-21T13:18:49Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaVox (BODC/SDN)</dc:publisher>
+        <skos:altLabel xml:lang="en">BIOMAPER-II</skos:altLabel>
+        <skos:definition xml:lang="en">An integrated instrument platform for coupled biological and physical measurements that has a 5 frequency split-beam acoustic system, a VPR system, an environmental sensing system and a bio-optical system. An electro-optical towing cable is used for two-way data communications and the system can be towed oscillating to depths of 300 m [Wiebe and Benfield 2003 Plate 41 A-E].</skos:definition>
+        <skos:prefLabel xml:lang="en">BIOMAPER-II - Wiebe et al (1999, 2002)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &lt;http://vocab.nerc.ac.uk/collection/L22/current/NETT0028/&gt; -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L22/current/NETT0028/">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</owl:versionInfo>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validated</status>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-10-21T13:18:49Z</dc:created>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaVox (BODC/SDN)</dc:creator>
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDN:L22::NETT0028</dc:identifier>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-10-21T13:18:49Z</dc:modified>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaVox (BODC/SDN)</dc:publisher>
+        <skos:altLabel xml:lang="en">DBAD-MOCNESS</skos:altLabel>
+        <skos:definition xml:lang="en">A 1-m2 MOCNESS was equipped with a dual-beam echosounder and dual-axis training mechanism for the transducers.  An electro-optical cable was used data telemetry [Wiebe and Benfield 2003 Plate 40 E].</skos:definition>
+        <skos:prefLabel xml:lang="en">DBAD-MOCNESS - Wiebe (1994); Greene (1998)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Action"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Country"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventDefinition"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#EventProperty"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Harbour"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Organisation"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Process"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Project"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#SeaArea"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Subject"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#Tool"/>
+            <rdf:Description rdf:about="http://ontologies.ef-ears.eu/ears2/1#ToolCategory"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.0.2) http://owlapi.sourceforge.net -->
+
