@@ -67,9 +67,13 @@ In Tomcat installation directory \conf\tomcat-users.xml file
 
 add 
 
+```
 <role rolename="manager-gui"/>
 
 <user password="XYZ" roles="manager-gui" username="XYZ"/>
+```
+
+
 
 1. Install one database : 
 
