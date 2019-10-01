@@ -15,7 +15,7 @@ In Tomcat installation directory \webapps\manager\WEB-INF\web.xml   file
 
 Modified content  like 
 
-```javascript
+```html
  <multipart-config>
 
 ​      <!-- 50MB max -->
@@ -51,10 +51,6 @@ Replace by
 ```
 
    
-
-
-
-
 
 
 
