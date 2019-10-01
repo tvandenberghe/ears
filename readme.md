@@ -75,7 +75,10 @@ add
 
 
 
+In Tomcat installation directory put folder with content
 
+1. https://github.com/tvandenberghe/ears/tree/master/toTomcat/ears
+2. https://github.com/tvandenberghe/ears/tree/master/toTomcat/var
 
 
 
