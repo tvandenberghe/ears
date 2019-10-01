@@ -75,23 +75,29 @@ add
 
 
 
+
+
+
+
+
+
 1. Install one database : 
 
 - Oracle database XE  18c or later (connector :ojdbc8-12.2.0.1)
 
-Create User XYZ:
+Create User casino with password casino
 
 -- USER SQL
-ALTER USER "XYZ"
+ALTER USER casino
 DEFAULT TABLESPACE "USERS"
 TEMPORARY TABLESPACE "TEMP"
 ACCOUNT UNLOCK ;
 
 -- QUOTAS
-ALTER USER "XYZ" QUOTA UNLIMITED ON "USERS";
+ALTER USER casino QUOTA UNLIMITED ON "USERS";
 
 -- ROLES
-ALTER USER "XYZ" DEFAULT ROLE "CONNECT","RESOURCE";
+ALTER USER casino DEFAULT ROLE "CONNECT","RESOURCE";
 
 -- SYSTEM PRIVILEGES
 
